@@ -1,0 +1,47 @@
+import pygame
+WIDTH = 800
+HIGHT = 800
+NAME = "SHAPE"
+screen=pygame.display.set_mode((WIDTH,HIGHT))
+pygame.display.set_caption(NAME)
+class circle():
+    def __init__(self,radius,collor,posx,posy):
+        self.radius=radius
+        self.collor=collor
+        self.posx=posx
+        self.posy=posy
+    def draw(self):
+        pygame.draw.circle(screen,self.collor,(self.posx,self.posy),self.radius,0)
+circle1=circle(50,"red",150,150)
+
+RUN=True
+screen.fill("white")
+while RUN==True :
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT :
+            RUN = False
+        if event.type==pygame.MOUSEBUTTONDOWN :
+            circle1.draw()
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    pygame.display.update()
