@@ -13,7 +13,6 @@ class circle():
     def draw(self):
         pygame.draw.circle(screen,self.collor,(self.posx,self.posy),self.radius,0)
 circle1=circle(50,"red",150,150)
-
 RUN=True
 screen.fill("white")
 while RUN==True :
@@ -22,7 +21,13 @@ while RUN==True :
             RUN = False
         if event.type==pygame.MOUSEBUTTONDOWN :
             circle1.draw()
-
+        if event.type==pygame.MOUSEBUTTONUP :
+            screen.fill("white")
+        if event.type==pygame.MOUSEMOTION :
+            mouse_pos=pygame.mouse.get_pos()
+            circle2=circle(50,"red",mouse_pos[0],mouse_pos[1])
+            circle2.draw()
+            
     
     
     
